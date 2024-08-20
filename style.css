@@ -1,0 +1,61 @@
+summary {
+    display: block;
+}
+summary::-webkit-details-marker {
+    /* Safariで表示されるデフォルトの三角形アイコンを消します */
+    display: none;
+  }
+
+  /* アイコン */
+.icon {
+display: block;
+position: relative;
+width: 24px;
+margin-left: 6px;
+flex-shrink: 0;
+transform-origin: center 43%;
+transition: transform 0.4s;
+}
+details.is-opened .icon {
+    transform: rotate(180deg);
+  }
+/* アコーディオンが開いた時のスタイル */
+details[open] .icon {
+    transform: rotate(180deg);
+  }
+  
+  /* アイコンのバーのスタイル */
+  .icon::before,
+  .icon::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 3px;
+    background-color: #7050ff;
+  }
+  
+  .icon::before {
+    left: 0;
+    transform: rotate(45deg);
+  }
+  
+  .icon::after {
+    right: 0;
+    transform: rotate(-45deg);
+  }
+
+
+.summay__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.content_inner {
+padding: 24px 48px;
+}
